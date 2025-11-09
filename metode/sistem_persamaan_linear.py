@@ -1,31 +1,34 @@
 import numpy as np
 
+
 def eliminasi_gauss_naive(A, b):
     """
     Menyelesaikan sistem persamaan linear Ax = b menggunakan
     metode eliminasi Gauss naif (tanpa pivoting).
-    
+
     Args:
         A (np.array): Matriks koefisien (n x n).
         b (np.array): Vektor hasil (n).
-        
+
     Returns:
         np.array: Vektor solusi x (n).
     """
-    
+
     # --- 1. Inisialisasi & Salin Data ---
     # Salin A dan b agar tidak mengubah data asli!
     # Gunakan astype(float) untuk memastikan semua perhitungan adalah float
     C = A.copy().astype(float)
     r = b.copy().astype(float)
-    
+
     n = len(r)
     x = np.zeros(n)
 
     # --- 2. Eliminasi Maju (Forward Elimination) ---
     # (Mengubah C menjadi matriks segitiga atas)
     for k in range(n - 1):  # Loop dari k = 0 hingga n-2
-        
+        if C[k, k] == 0:
+            raise ZeroDivisionError("Pivot nol terdeteksi. Eliminasi Gauss naif tidak dapat melanjutkan.")
+
         # Normalisasi baris pivot (k)
         temp = 1.0 / C[k, k]
         for j in range(k, n):  # Loop dari j = k hingga n-1
@@ -51,7 +54,7 @@ def eliminasi_gauss_naive(A, b):
         sum_val = 0
         for j in range(i + 1, n):  # Loop dari j = i+1 hingga n-1
             sum_val = sum_val + C[i, j] * x[j]
-        
+
         # Seperti yang Anda catat, C[i, i] di sini sudah 1
         # karena normalisasi di langkah 2.
         # sum_val = sum_val / C[i, i] # -> Baris ini bisa dihilangkan

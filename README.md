@@ -1,77 +1,88 @@
-# 🧮 Numerical Methods Calculator
+# 🧮 Metnum-Solver: Numerical Methods CLI
 
-A modular command-line interface (CLI) calculator program for solving various numerical methods problems. This project is built with Python and designed to be easily expandable.
+A modular command-line interface (CLI) program for solving various numerical methods problems. Built with Python, this project is designed for extensibility and ease of use in an educational context.
 
 ---
 
-##  latar Belakang (Background)
+## 💡 Background
 
-This project was created as a tool for a **Numerical Methods** university course. In this course, students often face various mathematical problems requiring different numerical solution methods, such as:
+This project originated from the need for a centralized tool in a **Numerical Methods** university course. Students often encounter diverse mathematical problems requiring different numerical solution techniques, such as solving systems of linear equations, finding roots of non-linear equations, or calculating definite integrals.
 
-* Solving systems of linear equations (e.g., Gaussian Elimination).
-* Finding roots of non-linear equations (e.g., Newton-Raphson Method).
-* Calculating definite integrals (e.g., Trapezoidal or Simpson's Rule).
+The traditional approach of rewriting computation scripts for each new problem is time-consuming and error-prone. This solver aims to streamline the process by providing a single application where users can:
 
-A common challenge is the need to **rewrite computation scripts from scratch** for every new problem or method. This process is time-consuming, inefficient, and prone to errors.
+1.  Run the program.
+2.  Select a desired numerical method from a menu.
+3.  Interactively input problem-specific data (e.g., matrices, equations).
+4.  Obtain the solution directly.
 
-This calculator was born from the idea to **centralize** all these methods into one parent program. The goal is to create a "calculator" where the user (student) simply needs to:
-
-1.  Run a single program.
-2.  Select the desired method from a menu.
-3.  Enter data (like matrices or equations) interactively.
-4.  Get the solution directly.
-
-With this approach, the focus can shift from repetitive code setup to understanding the concepts and analyzing the results of the numerical methods themselves.
+This approach allows users to focus on understanding numerical concepts and analyzing results, rather than repetitive coding setup.
 
 ---
 
 ## ✨ Key Features
 
-* **Interactive CLI Menu:** An easy-to-use text-based interface.
-* **Flexible Equation Input:** Uses the **SymPy** library to parse function inputs as strings (e.g., `"x**3 - 2*x + 1"`) and automatically calculate their derivatives.
-* **Data Visualization:** Integrates with **Matplotlib** to plot functions, aiding in the visualization of problems like integration or root finding.
-* **Modular Structure:** The code is clearly separated into:
-    * `metode/`: (The Brain) Core mathematical logic (algorithms).
-    * `ui/`: (The Face) User interface logic (menus, input/output).
-    * `utils/`: (The Toolbox) Helper functions (input parsers, visualization).
-* **Error Handling:** Equipped with basic error handling, such as zero pivot detection in Gaussian Elimination.
+*   **Interactive CLI Menu:** User-friendly text-based interface.
+*   **Flexible Equation Input:** Utilizes the **SymPy** library for parsing symbolic function inputs (e.g., `"x**3 - 2*x + 1"`) and automatic derivative calculation.
+*   **Data Visualization:** Integrates with **Matplotlib** to plot functions, aiding in the visual analysis of problems.
+*   **Modular Structure:** Code is organized into logical components:
+    *   `metode/`: Core mathematical algorithms.
+    *   `ui/`: User interface and interaction logic.
+    *   `utils/`: Helper functions (input parsing, visualization).
+*   **Error Handling:** Basic error handling, such as zero pivot detection in Gaussian Elimination.
 
 ---
 
 ## 📚 Implemented Methods
 
-Currently, this program supports:
+Currently, this program fully supports:
 
-* **Systems of Linear Equations (SLE):**
-    * Naive Gaussian Elimination
-* **Root Finding:**
-    * Newton-Raphson Method *(Core logic in development)*
-* **Numerical Integration:**
-    * Trapezoidal Rule *(Core logic in development)*
+*   **Systems of Linear Equations (SLE):**
+    *   Naive Gaussian Elimination
+
+---
+
+## 🚧 Planned Features
+
+The following methods are planned for future implementation:
+
+*   **Root Finding:**
+    *   Newton-Raphson Method
+*   **Numerical Integration:**
+    *   Trapezoidal Rule
 
 ---
 
 ## 🚀 Installation and Setup
 
-To run this project on your computer, follow these steps:
+To run this project, ensure you have **Python 3.8+** installed.
 
-1.  Ensure you have **Python 3.8** or newer.
-2.  (Optional but recommended) Create and activate a *virtual environment*:
+1.  **Clone the repository:**
+    ```bash
+    git clone https://github.com/your-username/Metnum-Solver.git # Replace with actual repo URL
+    cd Metnum-Solver
+    ```
+2.  **(Optional but Recommended) Create and activate a virtual environment:**
     ```bash
     python -m venv venv
-    source venv/bin/activate  # (On Windows: venv\Scripts\activate)
+    # On Windows:
+    .\venv\Scripts\activate
+    # On macOS/Linux:
+    source venv/bin/activate
     ```
-3.  Install all required libraries from the `requirements.txt` file:
+3.  **Install required dependencies:**
     ```bash
     pip install -r requirements.txt
     ```
-    *Main libraries: `numpy`, `sympy`, `matplotlib`, `scipy`.*
+    *(Key libraries: `numpy`, `sympy`, `matplotlib`, `scipy`, `ruff`)*
 
 ---
 
 ## 🏃 How to Run
 
-To start the application, run the `main.py` file from the project's root directory:
+After installation, start the application from the project's root directory:
 
 ```bash
 python main.py
+```
+
+---

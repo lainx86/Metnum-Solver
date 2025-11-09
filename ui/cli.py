@@ -1,17 +1,15 @@
-import numpy as np
 
 # --- Impor dari folder 'metode' ---
 from metode.sistem_persamaan_linear import eliminasi_gauss_naive
 
 # --- Impor dari folder 'utils' ---
 from utils.parser import (
-    parse_matriks_interaktif, 
+    parse_matriks_interaktif,
     parse_vektor_interaktif,
-    parse_fungsi_simbolik
 )
-from utils.visualisasi import plot_fungsi
 
 # --- Definisi Sub-Menu ---
+
 
 def menu_spl():
     """Menangani sub-menu untuk Sistem Persamaan Linear."""
@@ -33,7 +31,7 @@ def menu_spl():
         # Memanggil fungsi logika inti
         print("\nMenghitung solusi...")
         solusi_x = eliminasi_gauss_naive(A, b)
-        
+
         print("\n--------------------------")
         print("Solusi (x):")
         print(solusi_x)
@@ -46,28 +44,30 @@ def menu_spl():
     except Exception as e:
         print(f"Error: Terjadi kesalahan: {e}")
 
+
 # --- Fungsi Menu Utama ---
+
 
 def jalankan_menu_utama():
     """Menampilkan dan menjalankan menu utama aplikasi."""
     print("=" * 40)
     print("  Selamat Datang di Kalkulator Numerik")
     print("=" * 40)
-    
+
     while True:
         print("\nPilih Metode:")
         print("  1. Sistem Persamaan Linear (Eliminasi Gauss)")
         print("  0. Keluar")
-        
-        pilihan = input("Masukkan pilihan Anda (0-3): ").strip()
-        
-        if pilihan == '1':
+
+        pilihan = input("Masukkan pilihan Anda (0-1): ").strip()
+
+        if pilihan == "1":
             menu_spl()
-        elif pilihan == '2':
-            menu_cari_akar()
-        elif pilihan == '3':
-            menu_integrasi()
-        elif pilihan == '0':
+        # elif pilihan == "2":
+        #     menu_cari_akar()
+        # elif pilihan == "3":
+        #     menu_integrasi()
+        elif pilihan == "0":
             print("\nTerima kasih telah menggunakan program ini.")
             break
         else:
