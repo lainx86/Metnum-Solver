@@ -41,3 +41,6 @@ Desktop.ini
 /dist/
 /build/
 *.egg-info/
+
+# others
+GEMINI.md
