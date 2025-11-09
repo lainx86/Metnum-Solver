@@ -1,0 +1,43 @@
+# Virtual Environments
+# ---------------------------------
+# Abaikan folder virtual environment
+/venv/
+/.venv/
+/env/
+/.env/
+/env.bak/
+/venv.bak/
+
+# Python cache files
+# ---------------------------------
+# Abaikan file cache dan bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+
+# IDE & Editor configuration
+# ---------------------------------
+# Visual Studio Code
+.vscode/
+# PyCharm
+.idea/
+
+# OS-generated files
+# ---------------------------------
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+ehthumbs.db
+ehthumbs_vista.db
+*.stackdump
+Desktop.ini
+
+# Build artifacts
+# ---------------------------------
+/dist/
+/build/
+*.egg-info/
